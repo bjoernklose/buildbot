@@ -47,8 +47,7 @@ RUN         apt-get update && \
 # Install php stuff
 # composer (via http://stackoverflow.com/a/36346075)
             curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-    useradd -ms /bin/bash buildbot && chown -R buildbot /buildbot
+            useradd -ms /bin/bash buildbot && chown -R buildbot /buildbot
 
 USER buildbot
 
