@@ -30,6 +30,7 @@ RUN         apt-get update && \
                 libffi-dev \
                 libssl-dev \
                 python-pip \
+                php \
                 curl && \
             rm -rf /var/lib/apt/lists/* && \
 # Test runs produce a great quantity of dead grandchild processes.  In a
@@ -43,6 +44,9 @@ RUN         apt-get update && \
             pip --no-cache-dir install \
                 'twisted[tls]' && \
             pip install /usr/src/buildbot-worker && \
+# Install php stuff
+# composer (via http://stackoverflow.com/a/36346075)
+            curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
     useradd -ms /bin/bash buildbot && chown -R buildbot /buildbot
 
