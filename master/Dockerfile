@@ -1,4 +1,4 @@
-# buildbot/buildbot-master
+# bjoernklose/buildbot
 
 # please follow docker best practices
 # https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
